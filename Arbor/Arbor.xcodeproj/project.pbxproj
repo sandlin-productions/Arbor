@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE281CD82A1583E5005C7770 /* ArborApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CD72A1583E5005C7770 /* ArborApp.swift */; };
+		FE281CDA2A1583E5005C7770 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CD92A1583E5005C7770 /* Persistence.swift */; };
+		FE281CDD2A1583E5005C7770 /* Arbor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE281CDB2A1583E5005C7770 /* Arbor.xcdatamodeld */; };
+		FE281CDF2A1583E5005C7770 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CDE2A1583E5005C7770 /* ContentView.swift */; };
+		FE281CE12A1583E7005C7770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE281CE02A1583E7005C7770 /* Assets.xcassets */; };
+		FE281CE52A1583E7005C7770 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE281CE42A1583E7005C7770 /* Preview Assets.xcassets */; };
+		FE281CED2A158422005C7770 /* TrunkParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CEC2A158422005C7770 /* TrunkParameterView.swift */; };
+		FE281CEF2A158456005C7770 /* TreeVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CEE2A158456005C7770 /* TreeVisualizationView.swift */; };
+		FE281CF12A158DC0005C7770 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF02A158DC0005C7770 /* UserInputView.swift */; };
+		FE281CF32A16ABCE005C7770 /* BranchParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF22A16ABCE005C7770 /* BranchParameterView.swift */; };
+		FE281CF62A16AC81005C7770 /* LeafParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF52A16AC81005C7770 /* LeafParameterView.swift */; };
+		FE281CF82A16ADAD005C7770 /* OverviewParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */; };
+		FE281CFA2A16AE25005C7770 /* MeshParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF92A16AE25005C7770 /* MeshParameterView.swift */; };
+		FE281D1C2A17F0CA005C7770 /* HierarchyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281D1B2A17F0CA005C7770 /* HierarchyView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FE281CD42A1583E4005C7770 /* Arbor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arbor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE281CD72A1583E5005C7770 /* ArborApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArborApp.swift; sourceTree = "<group>"; };
+		FE281CD92A1583E5005C7770 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		FE281CDC2A1583E5005C7770 /* Arbor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arbor.xcdatamodel; sourceTree = "<group>"; };
+		FE281CDE2A1583E5005C7770 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FE281CE02A1583E7005C7770 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE281CE22A1583E7005C7770 /* Arbor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arbor.entitlements; sourceTree = "<group>"; };
+		FE281CE42A1583E7005C7770 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE281CEC2A158422005C7770 /* TrunkParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkParameterView.swift; sourceTree = "<group>"; };
+		FE281CEE2A158456005C7770 /* TreeVisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeVisualizationView.swift; sourceTree = "<group>"; };
+		FE281CF02A158DC0005C7770 /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
+		FE281CF22A16ABCE005C7770 /* BranchParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchParameterView.swift; sourceTree = "<group>"; };
+		FE281CF52A16AC81005C7770 /* LeafParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafParameterView.swift; sourceTree = "<group>"; };
+		FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewParameterView.swift; sourceTree = "<group>"; };
+		FE281CF92A16AE25005C7770 /* MeshParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshParameterView.swift; sourceTree = "<group>"; };
+		FE281D1B2A17F0CA005C7770 /* HierarchyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE281CD12A1583E4005C7770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE281CCB2A1583E4005C7770 = {
+			isa = PBXGroup;
+			children = (
+				FE281CD62A1583E4005C7770 /* Arbor */,
+				FE281CD52A1583E4005C7770 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE281CD52A1583E4005C7770 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE281CD42A1583E4005C7770 /* Arbor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE281CD62A1583E4005C7770 /* Arbor */ = {
+			isa = PBXGroup;
+			children = (
+				FE281CEB2A158404005C7770 /* Views */,
+				FE281CD72A1583E5005C7770 /* ArborApp.swift */,
+				FE281CD92A1583E5005C7770 /* Persistence.swift */,
+				FE281CDE2A1583E5005C7770 /* ContentView.swift */,
+				FE281CE02A1583E7005C7770 /* Assets.xcassets */,
+				FE281CE22A1583E7005C7770 /* Arbor.entitlements */,
+				FE281CDB2A1583E5005C7770 /* Arbor.xcdatamodeld */,
+				FE281CE32A1583E7005C7770 /* Preview Content */,
+			);
+			path = Arbor;
+			sourceTree = "<group>";
+		};
+		FE281CE32A1583E7005C7770 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FE281CE42A1583E7005C7770 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FE281CEB2A158404005C7770 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE281CF42A16AC0F005C7770 /* UsersInputParameterViews */,
+				FE281CEE2A158456005C7770 /* TreeVisualizationView.swift */,
+				FE281CF02A158DC0005C7770 /* UserInputView.swift */,
+				FE281D1B2A17F0CA005C7770 /* HierarchyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FE281CF42A16AC0F005C7770 /* UsersInputParameterViews */ = {
+			isa = PBXGroup;
+			children = (
+				FE281CEC2A158422005C7770 /* TrunkParameterView.swift */,
+				FE281CF22A16ABCE005C7770 /* BranchParameterView.swift */,
+				FE281CF52A16AC81005C7770 /* LeafParameterView.swift */,
+				FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */,
+				FE281CF92A16AE25005C7770 /* MeshParameterView.swift */,
+			);
+			path = UsersInputParameterViews;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE281CD32A1583E4005C7770 /* Arbor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE281CE82A1583E7005C7770 /* Build configuration list for PBXNativeTarget "Arbor" */;
+			buildPhases = (
+				FE281CD02A1583E4005C7770 /* Sources */,
+				FE281CD12A1583E4005C7770 /* Frameworks */,
+				FE281CD22A1583E4005C7770 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arbor;
+			productName = Arbor;
+			productReference = FE281CD42A1583E4005C7770 /* Arbor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE281CCC2A1583E4005C7770 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FE281CD32A1583E4005C7770 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = FE281CCF2A1583E4005C7770 /* Build configuration list for PBXProject "Arbor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE281CCB2A1583E4005C7770;
+			productRefGroup = FE281CD52A1583E4005C7770 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE281CD32A1583E4005C7770 /* Arbor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE281CD22A1583E4005C7770 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE281CE52A1583E7005C7770 /* Preview Assets.xcassets in Resources */,
+				FE281CE12A1583E7005C7770 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE281CD02A1583E4005C7770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE281D1C2A17F0CA005C7770 /* HierarchyView.swift in Sources */,
+				FE281CFA2A16AE25005C7770 /* MeshParameterView.swift in Sources */,
+				FE281CDD2A1583E5005C7770 /* Arbor.xcdatamodeld in Sources */,
+				FE281CD82A1583E5005C7770 /* ArborApp.swift in Sources */,
+				FE281CDF2A1583E5005C7770 /* ContentView.swift in Sources */,
+				FE281CF12A158DC0005C7770 /* UserInputView.swift in Sources */,
+				FE281CF62A16AC81005C7770 /* LeafParameterView.swift in Sources */,
+				FE281CF82A16ADAD005C7770 /* OverviewParameterView.swift in Sources */,
+				FE281CEF2A158456005C7770 /* TreeVisualizationView.swift in Sources */,
+				FE281CF32A16ABCE005C7770 /* BranchParameterView.swift in Sources */,
+				FE281CDA2A1583E5005C7770 /* Persistence.swift in Sources */,
+				FE281CED2A158422005C7770 /* TrunkParameterView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FE281CE62A1583E7005C7770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE281CE72A1583E7005C7770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FE281CE92A1583E7005C7770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arbor/Arbor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Arbor/Preview Content\"";
+				DEVELOPMENT_TEAM = 2JDDE67ZC7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SandlinProductions.Arbor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE281CEA2A1583E7005C7770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Arbor/Arbor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Arbor/Preview Content\"";
+				DEVELOPMENT_TEAM = 2JDDE67ZC7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SandlinProductions.Arbor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE281CCF2A1583E4005C7770 /* Build configuration list for PBXProject "Arbor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE281CE62A1583E7005C7770 /* Debug */,
+				FE281CE72A1583E7005C7770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE281CE82A1583E7005C7770 /* Build configuration list for PBXNativeTarget "Arbor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE281CE92A1583E7005C7770 /* Debug */,
+				FE281CEA2A1583E7005C7770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE281CDB2A1583E5005C7770 /* Arbor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE281CDC2A1583E5005C7770 /* Arbor.xcdatamodel */,
+			);
+			currentVersion = FE281CDC2A1583E5005C7770 /* Arbor.xcdatamodel */;
+			path = Arbor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FE281CCC2A1583E4005C7770 /* Project object */;
+}
