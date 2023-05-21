@@ -34,6 +34,7 @@ struct ContentView: View {
             .listStyle(SidebarListStyle())
             .frame(minWidth: 100, maxWidth: 150)
             
+            Divider()
             TreeVisualizationView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
@@ -67,7 +68,7 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(minWidth: 800, idealWidth: 1000, minHeight: 600, idealHeight: 800)
+        .frame(minWidth: 800, idealWidth: 800, minHeight: 600, idealHeight: 800)
     }
 }
 
