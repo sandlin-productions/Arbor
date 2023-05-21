@@ -14,52 +14,31 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(selection: $selectedTab) {
-                NavigationLink(destination: OverviewParameterView(), tag: 1, selection: $selectedTab) {
-                                       Label("Overview", systemImage: "doc.text.magnifyingglass")
-                                   }
-                                   NavigationLink(destination: TrunkParameterView(), tag: 2, selection: $selectedTab) {
-                                       Label("Trunk", systemImage: "arrow.up.forward")
-                                   }
-                                   NavigationLink(destination: BranchParameterView(), tag: 3, selection: $selectedTab) {
-                                       Label("Branch", systemImage: "arrow.branch")
-                                   }
-                                   NavigationLink(destination: LeafParameterView(), tag: 4, selection: $selectedTab) {
-                                       Label("Leaf", systemImage: "leaf")
-                                   }
-                                   NavigationLink(destination: MeshParameterView(), tag: 5, selection: $selectedTab) {
-                                       Label("Mesh", systemImage: "square.grid.2x2")
-                                   }
+            NavigationStack {
+                List {
+                    ForEach(1..<6) { index in
+                        NavigationLink(
+                            destination: destinationForTab(index),
+                            tag: index,
+                            selection: $selectedTab,
+                            label: {
+                                labelForTab(index)
+                            }
+                        )
+                    }
+                }
+                .listStyle(SidebarListStyle())
+                .frame(minWidth: 150, maxWidth: 200)
             }
-            .listStyle(SidebarListStyle())
-            .frame(minWidth: 100, maxWidth: 150)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            //Divider() This makes the 3 colum look I want, but I need to figure how to make it work better
             
             TreeVisualizationView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            if isInspectorVisible {
-                VStack(spacing: 0) {
-                    switch selectedTab {
-                    case 1:
-                        OverviewParameterView()
-                    case 2:
-                        TrunkParameterView()
-                    case 3:
-                        BranchParameterView()
-                    case 4:
-                        LeafParameterView()
-                    case 5:
-                        MeshParameterView()
-                    default:
-                        OverviewParameterView()
-                    }
-                }.frame(minWidth: 300, maxWidth: 300)
-                
-            }
-                             
         }
         .toolbar {
-            ToolbarItem(placement: .navigation) {
+            ToolbarItem(placement: .primaryAction) { // <-- Change placement to .primaryAction
                 Button(action: {
                     isInspectorVisible.toggle()
                 }) {
@@ -67,10 +46,43 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(minWidth: 800, idealWidth: 1000, minHeight: 600, idealHeight: 800)
+        .frame(minWidth: 1000, minHeight: 600)
+    }
+    
+    func destinationForTab(_ tab: Int) -> some View {
+            switch tab {
+            case 1:
+                return AnyView(OverviewParameterView())
+            case 2:
+                return AnyView(TrunkParameterView())
+            case 3:
+                return AnyView(BranchParameterView())
+            case 4:
+                return AnyView(LeafParameterView())
+            case 5:
+                return AnyView(MeshParameterView())
+            default:
+                return AnyView(OverviewParameterView())
+            }
+        }
+    
+    func labelForTab(_ tab: Int) -> some View {
+        switch tab {
+        case 1:
+            return Label("Overview", systemImage: "doc.text.magnifyingglass")
+        case 2:
+            return Label("Trunk", systemImage: "arrow.up.forward")
+        case 3:
+            return Label("Branch", systemImage: "arrow.branch")
+        case 4:
+            return Label("Leaf", systemImage: "leaf")
+        case 5:
+            return Label("Mesh", systemImage: "square.grid.2x2")
+        default:
+            return Label("Overview", systemImage: "doc.text.magnifyingglass")
+        }
     }
 }
-
 
 
 struct ContentView_Previews: PreviewProvider {
