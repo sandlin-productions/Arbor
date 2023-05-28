@@ -12,6 +12,9 @@ struct ContentView: View {
     @State private var isInspectorVisible = true
     @State private var selectedTab: Int? = nil
     
+    let myTree = Tree(width: 10.0, height: 100.0)
+
+    
     var body: some View {
         NavigationView {
             List(selection: $selectedTab) {
@@ -35,7 +38,7 @@ struct ContentView: View {
             .frame(minWidth: 100, maxWidth: 150)
             
             Divider()
-            TreeVisualizationView()
+            TreeVisualizationView(tree: myTree)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             if isInspectorVisible {

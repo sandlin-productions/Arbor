@@ -29,7 +29,7 @@ vertex VertexOutput vertexShader(VertexInput vertexIn [[stage_in]]) {
 
 // Fragment shader function
 fragment float4 fragmentShader(VertexOutput vertexOut [[stage_in]]) {
-    float4 color = float4(0.0, 1.0, 0.0, 1.0); // Red color
+    float4 color = float4(0.0, 1.0, 0.0, 1.0); 
     
     return color;
 }
