@@ -17,26 +17,16 @@ struct TreeVisualizationView: NSViewRepresentable {
     
     let tree: Tree // Define the tree variable here
     
-    
     func makeNSView(context: Context) -> MTKView {
         let metalDevice = MTLCreateSystemDefaultDevice()!
         let metalView = MTKView(frame: .zero, device: metalDevice)
         metalView.delegate = context.coordinator
         metalView.preferredFramesPerSecond = 120
         metalView.enableSetNeedsDisplay = true
-        metalView.clearColor = MTLClearColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        metalView.clearColor = MTLClearColor(red: 0.0, green: 0.25, blue: 1.0, alpha: 1.0)
         metalView.framebufferOnly = false
-        metalView.drawableSize = metalView.frame.size
+     //   metalView.drawableSize = CGSize(width: tree.width, height: tree.height)
         metalView.isPaused = false
-        metalView.depthStencilPixelFormat = .depth32Float
-        // Create a branch instance and set up the buffers
-        let branch = Branch()
-        branch.setupBuffers(device: metalDevice)
-        
-        // Access the indexCount property
-        _ = branch.indexCount
-        // Use the count as needed
-        
         return metalView
     }
     
@@ -48,17 +38,12 @@ struct TreeVisualizationView: NSViewRepresentable {
         guard let metalDevice = MTLCreateSystemDefaultDevice() else {
             fatalError("Metal is not supported on this device")
         }
-        let metalView = MTKView(frame: .zero, device: metalDevice)
         
-        // Create a branch instance and set up the buffers
+        let metalView = MTKView(frame: .zero, device: metalDevice)
         let branch = Branch()
         branch.setupBuffers(device: metalDevice)
         
-        // Access the indexCount property
-        _ = branch.indexCount
-        // Use the count as needed
-        
-        return MetalRenderer(metalView: metalView, rootBranch: tree.rootBranch)
+        return MetalRenderer(metalView: metalView, rootBranch: tree.rootBranch, tree: tree)
     }
 }
 
@@ -80,7 +65,7 @@ class MetalRenderer: NSObject, MTKViewDelegate {
     
     let rootBranch: Branch // Add a property to store the rootBranch
     
-    init(metalView: MTKView, rootBranch: Branch) { // Add a parameter for the rootBranch
+    init(metalView: MTKView, rootBranch: Branch, tree: Tree) { // Add a parameter for the rootBranch
         device = metalView.device!
         commandQueue = device.makeCommandQueue()!
         self.rootBranch = rootBranch // Store the rootBranch
@@ -123,10 +108,34 @@ class MetalRenderer: NSObject, MTKViewDelegate {
         renderPipelineState = try! device.makeRenderPipelineState(descriptor: pipelineDescriptor)
         
         super.init() // Initialize the superclass after initializing the vertexDescriptor
+        
+        // Adjust the position values to place the root branch at the desired location
+        let scale: Float = 2.0
+        let startVertex = Vertex(position: SIMD3<Float>(-0.5 * scale, 0.0, 0.0))
+        let endVertex = Vertex(position: SIMD3<Float>(0.5 * scale, 0.0, 0.0))
+        
+        // Define the indices to connect the vertices as a line
+        let startIndex: UInt16 = 0
+        let endIndex: UInt16 = 1
+        
+        // Assign the vertices and indices to the root branch's properties
+        rootBranch.vertices = [startVertex, endVertex]
+        rootBranch.indices = [startIndex, endIndex]
+        
+        // Create the vertex buffer
+        let vertexBufferSize = MemoryLayout<Vertex>.stride * rootBranch.vertices.count
+        rootBranch.vertexBuffer = device.makeBuffer(bytes: rootBranch.vertices, length: vertexBufferSize, options: [])
+        
+        // Create the index buffer
+        let indexBufferSize = MemoryLayout<UInt16>.stride * rootBranch.indices.count
+        rootBranch.indexBuffer = device.makeBuffer(bytes: rootBranch.indices, length: indexBufferSize, options: [])
+        
+        // Set the index count
+        rootBranch.indexCount = rootBranch.indices.count
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        print("Drawable size will change: \(size)")
+       // print("Drawable size will change: \(size)")
         // Handle resizing if needed
     }
     
@@ -139,8 +148,6 @@ class MetalRenderer: NSObject, MTKViewDelegate {
             return
         }
         
-        // Set the clear color here
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         
         renderEncoder.setRenderPipelineState(renderPipelineState)
         

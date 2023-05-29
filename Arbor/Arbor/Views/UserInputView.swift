@@ -5,6 +5,7 @@
 //  Created by Stephen Sandlin on 5/17/23.
 //
 
+//  UserInputView.swift
 import SwiftUI
 
 struct UserInputView: View {
@@ -50,11 +51,16 @@ struct UserInputView: View {
         }
     }
     
-    struct BranchView: View {
-        var body: some View {
-            BranchParameterView()
-        }
+struct BranchView: View {
+    @State private var length: Double = 0.5
+    @State private var thickness: Double = 0.7
+    @State private var angle: Double = 0.5
+    
+    var body: some View {
+        BranchParameterView(length: $length, thickness: $thickness, angle: $angle)
     }
+}
+
     
     struct LeafView: View {
         var body: some View {

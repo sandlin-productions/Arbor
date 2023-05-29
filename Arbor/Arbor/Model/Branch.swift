@@ -4,15 +4,31 @@
 //
 //  Created by Stephen Sandlin on 5/23/23.
 //
-
+// Branch.swift
 import Foundation
 import Metal
 import simd
+import SwiftUI
 
 class Branch {
-    var length: Float
-    var thickness: Float
-    var angle: Float
+    var length: Float {
+        didSet {
+            print("Length changed to: \(length)")
+        }
+    }
+    
+    var thickness: Float {
+        didSet {
+            print("Thickness changed to: \(thickness)")
+        }
+    }
+    
+    var angle: Float {
+        didSet {
+            print("Angle changed to: \(angle)")
+        }
+    }
+    
     var position: SIMD3<Float>
     var parent: Branch?
     var children: [Branch] = []
@@ -24,11 +40,11 @@ class Branch {
     var indexBuffer: MTLBuffer!
     var indexCount: Int!
     
-    init() {
-        self.length = 0.0
-        self.thickness = 0.0
-        self.angle = 0.0
-        self.position = SIMD3<Float>(0.0, 0.0, 0.0)
+    init(length: Float = 0.0, thickness: Float = 0.0, angle: Float = 0.0, position: SIMD3<Float> = SIMD3<Float>(0.0, 0.0, 0.0)) {
+        self.length = length
+        self.thickness = thickness
+        self.angle = angle
+        self.position = position
     }
     
     func grow() {
@@ -42,9 +58,11 @@ class Branch {
     func generateBuffers(device: MTLDevice) {
         // Generate the vertex buffer and index buffer for the branch
 
-        // Define the vertices for a simple line segment
-        let startVertex = Vertex(position: SIMD3<Float>(0.0, 0.0, 0.0))
-        let endVertex = Vertex(position: SIMD3<Float>(1.0, 1.0, 0.0))
+        // Adjust the position values to place the branch geometry at the desired location
+        let scale: Float = 2.0
+        let startVertex = Vertex(position: SIMD3<Float>(-0.5 * scale, -1.0, -1.0))
+        let endVertex = Vertex(position: SIMD3<Float>(0.5 * scale, 1.0, 1.0))
+
 
         // Define the indices to connect the vertices as a line
         let startIndex: UInt16 = 0
@@ -57,7 +75,7 @@ class Branch {
         // Print the generated vertices and indices
         print("Generated vertices: \(vertices)")
         print("Generated indices: \(indices)")
-
+        
         // Create the vertex buffer
         let vertexBufferSize = MemoryLayout<Vertex>.stride * vertices.count
         vertexBuffer = device.makeBuffer(bytes: vertices, length: vertexBufferSize, options: [])
