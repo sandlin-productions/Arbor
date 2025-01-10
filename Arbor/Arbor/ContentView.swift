@@ -10,40 +10,41 @@ import CoreData
 
 struct ContentView: View {
     @State private var isInspectorVisible = true
+    @State private var isSidebarVisible = true // Added variable to control sidebar visibility
     @State private var selectedTab: Int? = 1 // Default to "Overview"
 
     var body: some View {
         NavigationSplitView {
             // Sidebar with Navigation Links
-            List(selection: $selectedTab) {
-                NavigationLink(value: 1) {
-                    Label("Overview", systemImage: "doc.text.magnifyingglass")
+                List(selection: $selectedTab) {
+                    NavigationLink(value: 1) {
+                        Label("Overview", systemImage: "doc.text.magnifyingglass")
+                    }
+                    NavigationLink(value: 2) {
+                        Label("Trunk", systemImage: "arrow.up.forward")
+                    }
+                    NavigationLink(value: 3) {
+                        Label("Branch", systemImage: "arrow.branch")
+                    }
+                    NavigationLink(value: 4) {
+                        Label("Leaf", systemImage: "leaf")
+                    }
+                    NavigationLink(value: 5) {
+                        Label("Mesh", systemImage: "square.grid.2x2")
+                    }
                 }
-                NavigationLink(value: 2) {
-                    Label("Trunk", systemImage: "arrow.up.forward")
-                }
-                NavigationLink(value: 3) {
-                    Label("Branch", systemImage: "arrow.branch")
-                }
-                NavigationLink(value: 4) {
-                    Label("Leaf", systemImage: "leaf")
-                }
-                NavigationLink(value: 5) {
-                    Label("Mesh", systemImage: "square.grid.2x2")
-                }
-            }
-            .listStyle(SidebarListStyle())
-            .frame(minWidth: 100, maxWidth: 150)
+                .listStyle(SidebarListStyle())
+                .frame(minWidth: 100, maxWidth: 150)
 
         } detail: {
             // Middle Section with TreeVisualizationView
             HStack(spacing: 0) {
                 TreeVisualizationView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.gray.opacity(0.1)) // Optional background for clarity
+                    .background(Color.gray.opacity(0.1))// Optional background for clarity
                 
-                Divider() // Divider between TreeVisualization and Inspector
-
+                Divider()// Divider between TreeVisualization and Inspector
+                
                 // Right Section with Parameter View
                 if isInspectorVisible {
                     VStack(spacing: 0) {
@@ -62,13 +63,13 @@ struct ContentView: View {
                             OverviewParameterView()
                         }
                     }
-                    .frame(minWidth: 300, maxWidth: 300)
+                    .frame(minWidth: 75, maxWidth: 150)
                 }
             }
         }
         .toolbar {
-            // Toolbar Button to Show/Hide Inspector
-            ToolbarItem(placement: .navigation) {
+            // Toggle button for the inspector on the right
+            ToolbarItem(placement: .primaryAction) { // Use .primaryAction for right-side placement
                 Button(action: {
                     isInspectorVisible.toggle()
                 }) {
@@ -76,9 +77,10 @@ struct ContentView: View {
                 }
             }
         }
-        .frame(minWidth: 800, idealWidth: 800, minHeight: 600, idealHeight: 800)
+        .frame(minWidth: 1000, idealWidth: 800, minHeight: 600, idealHeight: 800)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
