@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var isInspectorVisible = true
     @State private var isSidebarVisible = true // Added variable to control sidebar visibility
     @State private var selectedTab: Int? = 1 // Default to "Overview"
-    @StateObject private var tree = Tree(width: 10, height: 20) // Create an observable Tree object
+    @StateObject private var trunk = Trunk(width: 10, height: 20) // Create an observable Tree object
 
 
     var body: some View {
@@ -41,7 +41,7 @@ struct ContentView: View {
         } detail: {
             // Middle Section with TreeVisualizationView
             HStack(spacing: 0) {
-                TreeVisualizationView(tree: tree)
+                TreeVisualizationView(tree: trunk)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.gray.opacity(0.1))// Optional background for clarity
                 
@@ -54,7 +54,7 @@ struct ContentView: View {
                         case 1:
                             OverviewParameterView()
                         case 2:
-                            TrunkParameterView()
+                            TrunkParameterView(trunk: trunk)
                         case 3:
                             BranchParameterView()
                         case 4:

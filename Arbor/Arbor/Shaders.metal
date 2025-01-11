@@ -6,28 +6,35 @@
 //
 
 #include <metal_stdlib>
-
 using namespace metal;
 
-// Vertex input struct
-struct VertexInput {
+// Vertex structure
+struct VertexIn {
     float4 position [[attribute(0)]];
 };
 
-// Vertex output struct
-struct VertexOutput {
-    float4 position [[position]]; // Clip-space position for rasterization
+struct VertexOut {
+    float4 position [[position]];
+    float4 color;
 };
 
-// Vertex shader function
-vertex VertexOutput vertexShader(VertexInput vertexIn [[stage_in]]) {
-    VertexOutput vertexOut;
-    vertexOut.position = vertexIn.position; // Pass position as-is
-    return vertexOut;
-}
+// Vertex Shader
+vertex VertexOut vertexShader(VertexIn in [[stage_in]]) {
+    VertexOut out;
 
-// Fragment shader function
-fragment float4 fragmentShader(VertexOutput vertexOut [[stage_in]]) {
-    // Return a brown color for branches
-    return float4(0.5, 0.25, 0.0, 1.0); // Brown
+    // Simple scale matrix to "zoom out"
+    float4x4 scaleMatrix = float4x4(
+        float4(0.3, 0.0, 0.0, 0.0),
+        float4(0.0, 0.3, 0.0, 0.0),
+        float4(0.0, 0.0, 1.0, 0.0),
+        float4(0.0, 0.0, 0.0, 1.0)
+    );
+
+    out.position = scaleMatrix * in.position;
+    out.color = float4(0.4, 0.2, 0.1, 1.0); // Brownish color
+    return out;
+}
+// Fragment Shader
+fragment float4 fragmentShader(VertexOut in [[stage_in]]) {
+    return in.color; // Output the branch color
 }

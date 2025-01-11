@@ -21,7 +21,7 @@
 		FE281CF82A16ADAD005C7770 /* OverviewParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */; };
 		FE281CFA2A16AE25005C7770 /* MeshParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF92A16AE25005C7770 /* MeshParameterView.swift */; };
 		FE281D1C2A17F0CA005C7770 /* HierarchyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281D1B2A17F0CA005C7770 /* HierarchyView.swift */; };
-		FE392C3F2A1D628000EF3CFF /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C3E2A1D628000EF3CFF /* Tree.swift */; };
+		FE392C3F2A1D628000EF3CFF /* Trunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C3E2A1D628000EF3CFF /* Trunk.swift */; };
 		FE392C412A1D62E100EF3CFF /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C402A1D62E100EF3CFF /* Branch.swift */; };
 		FE392C432A1D630100EF3CFF /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C422A1D630100EF3CFF /* Leaf.swift */; };
 		FEA299572A1AC94F00369BF0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = FEA299562A1AC94F00369BF0 /* Shaders.metal */; };
@@ -44,7 +44,7 @@
 		FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewParameterView.swift; sourceTree = "<group>"; };
 		FE281CF92A16AE25005C7770 /* MeshParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshParameterView.swift; sourceTree = "<group>"; };
 		FE281D1B2A17F0CA005C7770 /* HierarchyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchyView.swift; sourceTree = "<group>"; };
-		FE392C3E2A1D628000EF3CFF /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		FE392C3E2A1D628000EF3CFF /* Trunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trunk.swift; sourceTree = "<group>"; };
 		FE392C402A1D62E100EF3CFF /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		FE392C422A1D630100EF3CFF /* Leaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaf.swift; sourceTree = "<group>"; };
 		FEA299562A1AC94F00369BF0 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		FE392C3D2A1D626600EF3CFF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FE392C3E2A1D628000EF3CFF /* Tree.swift */,
+				FE392C3E2A1D628000EF3CFF /* Trunk.swift */,
 				FE392C402A1D62E100EF3CFF /* Branch.swift */,
 				FE392C422A1D630100EF3CFF /* Leaf.swift */,
 			);
@@ -213,7 +213,7 @@
 				FE281CDF2A1583E5005C7770 /* ContentView.swift in Sources */,
 				FE281CF12A158DC0005C7770 /* UserInputView.swift in Sources */,
 				FE392C412A1D62E100EF3CFF /* Branch.swift in Sources */,
-				FE392C3F2A1D628000EF3CFF /* Tree.swift in Sources */,
+				FE392C3F2A1D628000EF3CFF /* Trunk.swift in Sources */,
 				FE281CF62A16AC81005C7770 /* LeafParameterView.swift in Sources */,
 				FE281CF82A16ADAD005C7770 /* OverviewParameterView.swift in Sources */,
 				FE281CEF2A158456005C7770 /* TreeVisualizationView.swift in Sources */,

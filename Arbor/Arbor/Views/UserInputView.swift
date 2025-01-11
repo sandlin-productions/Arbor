@@ -14,11 +14,7 @@ struct UserInputView: View {
                     .tabItem {
                         Label("Overview", systemImage: "info.circle")
                     }
-                
-                TrunkView()
-                    .tabItem {
-                        Label("Trunk", systemImage: "square.stack.3d.up.fill")
-                    }
+
                 
                 BranchView()
                     .tabItem {
@@ -44,11 +40,7 @@ struct UserInputView: View {
         }
     }
     
-    struct TrunkView: View {
-        var body: some View {
-            TrunkParameterView()
-        }
-    }
+
     
     struct BranchView: View {
         var body: some View {
