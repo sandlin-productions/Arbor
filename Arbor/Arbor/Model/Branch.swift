@@ -16,15 +16,15 @@ class Branch {
     var children: [Branch] = []
     
     init() {
-        self.length = 0.0
-        self.thickness = 0.0
+        self.length = 10.0 // Sample value for debugging
+        self.thickness = 2.0 // Sample value for debugging
         self.angle = 0.0
         self.position = SIMD3<Float>(0.0, 0.0, 0.0)
+        print("Branch initialized with length=\(length), thickness=\(thickness), angle=\(angle)")
     }
     
     func grow() {
         // Logic to grow the branch
+        print("Branch growing...")
     }
-    
-    // Other methods for creating child branches, etc.
 }

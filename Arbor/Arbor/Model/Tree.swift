@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
-class Tree {
-    var rootBranch: Branch
+class Tree: ObservableObject {
+    @Published var rootBranch: Branch
     var width: Float
     var height: Float
     
@@ -16,11 +17,12 @@ class Tree {
         self.width = width
         self.height = height
         self.rootBranch = Branch()
+        
+        print("Tree initialized with width=\(width), height=\(height)")
     }
     
     func grow() {
         // Logic to grow the tree
+        print("Tree growing...")
     }
-    
-    // Other methods for updating tree properties, etc.
 }

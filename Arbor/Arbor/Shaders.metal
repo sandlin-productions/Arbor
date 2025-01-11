@@ -16,20 +16,18 @@ struct VertexInput {
 
 // Vertex output struct
 struct VertexOutput {
-    float4 position [[position]];
+    float4 position [[position]]; // Clip-space position for rasterization
 };
 
 // Vertex shader function
 vertex VertexOutput vertexShader(VertexInput vertexIn [[stage_in]]) {
     VertexOutput vertexOut;
-    vertexOut.position = vertexIn.position;
-    
+    vertexOut.position = vertexIn.position; // Pass position as-is
     return vertexOut;
 }
 
 // Fragment shader function
 fragment float4 fragmentShader(VertexOutput vertexOut [[stage_in]]) {
-    float4 color = float4(0.0, 1.0, 0.0, 1.0); // Red color
-    
-    return color;
+    // Return a brown color for branches
+    return float4(0.5, 0.25, 0.0, 1.0); // Brown
 }
