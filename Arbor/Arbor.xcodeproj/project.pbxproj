@@ -15,7 +15,6 @@
 		FE281CE52A1583E7005C7770 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE281CE42A1583E7005C7770 /* Preview Assets.xcassets */; };
 		FE281CED2A158422005C7770 /* TrunkParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CEC2A158422005C7770 /* TrunkParameterView.swift */; };
 		FE281CEF2A158456005C7770 /* TreeVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CEE2A158456005C7770 /* TreeVisualizationView.swift */; };
-		FE281CF12A158DC0005C7770 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF02A158DC0005C7770 /* UserInputView.swift */; };
 		FE281CF32A16ABCE005C7770 /* BranchParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF22A16ABCE005C7770 /* BranchParameterView.swift */; };
 		FE281CF62A16AC81005C7770 /* LeafParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF52A16AC81005C7770 /* LeafParameterView.swift */; };
 		FE281CF82A16ADAD005C7770 /* OverviewParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */; };
@@ -24,6 +23,7 @@
 		FE392C3F2A1D628000EF3CFF /* Trunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C3E2A1D628000EF3CFF /* Trunk.swift */; };
 		FE392C412A1D62E100EF3CFF /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C402A1D62E100EF3CFF /* Branch.swift */; };
 		FE392C432A1D630100EF3CFF /* Leaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE392C422A1D630100EF3CFF /* Leaf.swift */; };
+		FE97018B2D331AAF00C5AE78 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE97018A2D331AAF00C5AE78 /* MathUtils.swift */; };
 		FEA299572A1AC94F00369BF0 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = FEA299562A1AC94F00369BF0 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,6 @@
 		FE281CE42A1583E7005C7770 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE281CEC2A158422005C7770 /* TrunkParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrunkParameterView.swift; sourceTree = "<group>"; };
 		FE281CEE2A158456005C7770 /* TreeVisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeVisualizationView.swift; sourceTree = "<group>"; };
-		FE281CF02A158DC0005C7770 /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 		FE281CF22A16ABCE005C7770 /* BranchParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchParameterView.swift; sourceTree = "<group>"; };
 		FE281CF52A16AC81005C7770 /* LeafParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafParameterView.swift; sourceTree = "<group>"; };
 		FE281CF72A16ADAD005C7770 /* OverviewParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewParameterView.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		FE392C3E2A1D628000EF3CFF /* Trunk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trunk.swift; sourceTree = "<group>"; };
 		FE392C402A1D62E100EF3CFF /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		FE392C422A1D630100EF3CFF /* Leaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaf.swift; sourceTree = "<group>"; };
+		FE97018A2D331AAF00C5AE78 /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		FEA299562A1AC94F00369BF0 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +85,7 @@
 				FE281CD72A1583E5005C7770 /* ArborApp.swift */,
 				FE281CD92A1583E5005C7770 /* Persistence.swift */,
 				FE281CDE2A1583E5005C7770 /* ContentView.swift */,
+				FE97018A2D331AAF00C5AE78 /* MathUtils.swift */,
 				FEA299562A1AC94F00369BF0 /* Shaders.metal */,
 				FE281CE02A1583E7005C7770 /* Assets.xcassets */,
 				FE281CE22A1583E7005C7770 /* Arbor.entitlements */,
@@ -107,7 +108,6 @@
 			children = (
 				FE281CF42A16AC0F005C7770 /* UsersInputParameterViews */,
 				FE281CEE2A158456005C7770 /* TreeVisualizationView.swift */,
-				FE281CF02A158DC0005C7770 /* UserInputView.swift */,
 				FE281D1B2A17F0CA005C7770 /* HierarchyView.swift */,
 			);
 			path = Views;
@@ -208,10 +208,10 @@
 				FE281D1C2A17F0CA005C7770 /* HierarchyView.swift in Sources */,
 				FE281CFA2A16AE25005C7770 /* MeshParameterView.swift in Sources */,
 				FEA299572A1AC94F00369BF0 /* Shaders.metal in Sources */,
+				FE97018B2D331AAF00C5AE78 /* MathUtils.swift in Sources */,
 				FE281CDD2A1583E5005C7770 /* Arbor.xcdatamodeld in Sources */,
 				FE281CD82A1583E5005C7770 /* ArborApp.swift in Sources */,
 				FE281CDF2A1583E5005C7770 /* ContentView.swift in Sources */,
-				FE281CF12A158DC0005C7770 /* UserInputView.swift in Sources */,
 				FE392C412A1D62E100EF3CFF /* Branch.swift in Sources */,
 				FE392C3F2A1D628000EF3CFF /* Trunk.swift in Sources */,
 				FE281CF62A16AC81005C7770 /* LeafParameterView.swift in Sources */,

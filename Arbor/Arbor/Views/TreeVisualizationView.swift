@@ -92,10 +92,12 @@ class MetalRenderer: NSObject, MTKViewDelegate {
     }
 
     func updateTree(_ tree: Trunk) {
+        // Rotate the tree to adjust its orientation
+        tree.rotateTree()
+
         // Generate vertex data from the tree
         var vertices: [float4] = []
 
-        // Add the root branch and all its children
         func processBranch(branch: Branch, vertices: inout [float4]) {
             let scale: Float = 0.05 // Adjust this scale factor as needed
 
@@ -105,9 +107,7 @@ class MetalRenderer: NSObject, MTKViewDelegate {
                 startPosition.y + branch.length * sin(branch.angle) * scale,
                 startPosition.z
             )
-            // Debugging : Print out the angle for each branch
-            print("Branch Angle: \(branch.angle)")
-            
+
             let thickness: Float = 0.08 // Thin out the branches
             let perpendicular = float3(-sin(branch.angle), cos(branch.angle), 0.0) * thickness / 2.0
 
@@ -115,42 +115,26 @@ class MetalRenderer: NSObject, MTKViewDelegate {
             let start2 = startPosition + perpendicular
             let end1 = endPosition - perpendicular
             let end2 = endPosition + perpendicular
-            
-            //Append vertices to represnet the branch
+
+            // Append vertices to represent the branch
             vertices.append(float4(start1, 1.0))
             vertices.append(float4(start2, 1.0))
             vertices.append(float4(end1, 1.0))
             vertices.append(float4(end2, 1.0))
-            
-            // Debugging: Check if child branches exist
-                    if branch.children.isEmpty {
-                        print("No children for this branch")
-                    } else {
-                        print("Processing \(branch.children.count) child branches")
-                    }
 
-                    // Recursively process child branches
-                    for child in branch.children {
-                        processBranch(branch: child, vertices: &vertices)
-                    }
-                }
+            // Recursively process child branches
+            for child in branch.children {
+                processBranch(branch: child, vertices: &vertices)
+            }
+        }
 
-                // Safely unwrap the root branch
-                if let rootBranch = tree.branches.first {
-                    processBranch(branch: rootBranch, vertices: &vertices)
-                }
+        // Safely unwrap the root branch
+        if let rootBranch = tree.branches.first {
+            processBranch(branch: rootBranch, vertices: &vertices)
+        }
 
-                // Debugging: Print vertex positions
-                print("Vertex positions:")
-                for vertex in vertices {
-                    print(vertex)
-                }
-
-                // Debugging: Print total vertices count
-                print("Total vertices count: \(vertices.count)")
-
-                // Create a Metal buffer for the vertices
-                vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<float4>.stride, options: [])
+        // Create a Metal buffer for the vertices
+        vertexBuffer = device.makeBuffer(bytes: vertices, length: vertices.count * MemoryLayout<float4>.stride, options: [])
     }
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         // Handle resizing if needed
